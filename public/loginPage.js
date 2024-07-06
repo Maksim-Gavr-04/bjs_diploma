@@ -5,7 +5,7 @@ const userForm = new UserForm();
 // ---------- ВХОД ---------- \\
 userForm.loginFormCallback = data => {
   const responseToLogin = response => {
-    if (response.success !== true) {
+    if (!response.success) {
       userForm.setLoginErrorMessage(response.error);
       return;
     }
@@ -19,7 +19,7 @@ userForm.loginFormCallback = data => {
 // ---------- РЕГИСТРАЦИЯ ---------- \\
 userForm.registerFormCallback = data => {
   const responseToRegister = response => {
-    if (response.success !== true) {
+    if (!response.success) {
       userForm.setRegisterErrorMessage(response.error);
       return;
     }
